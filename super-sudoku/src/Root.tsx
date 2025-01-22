@@ -36,6 +36,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <Header />
+      <h1>hello world</h1>
       <React.Suspense fallback={<em>Loading...</em>}>
         <Router location={location} routes={routes}>
           <div>
