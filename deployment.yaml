@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: super-sudoku-jenkins
+  namespace: super-sudoku-jenkins
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: super-sudoku-jenkins
+  template:
+    metadata:
+      labels:
+        app: super-sudoku-jenkins
+    spec:
+      containers:
+      - name: super-sudoku-jenkins
+        image: 296609163560.dkr.ecr.us-east-1.amazonaws.com/myecr/super-sudoku-image:1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
